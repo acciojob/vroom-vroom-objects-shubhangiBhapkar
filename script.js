@@ -6,7 +6,7 @@ function Car(make, model) {
 	}
 
 	getMakeModel(){
-		return `${make} ${model}`;
+		return `${this.make} ${this.model}`;
 	}
 }
 
@@ -21,9 +21,9 @@ function SportsCar(make, model, topSpeed) extends Car {
 		return topSpeed;
 	}
 }
-const car = new SportsCar("Ferrari", "Testarossa", 200);
-console.log(car.getMakeModel());
-console.log(car.getTopSpeed());
+// const car = new SportsCar("Ferrari", "Testarossa", 200);
+// console.log(car.getMakeModel());
+// console.log(car.getTopSpeed());
 
 // Do not change the code below
 window.Car = Car;
