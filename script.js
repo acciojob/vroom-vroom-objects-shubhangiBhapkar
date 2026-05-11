@@ -1,30 +1,24 @@
 // Complete the js code
 function Car(make, model) {
-	Car(make,model){
 	this.make = make;
 	this.model = model;
-	}
-
-	getMakeModel(){
+}
+Car.prototype.getMakeModel = function(){
 		return `${this.make} ${this.model}`;
-	}
+};
+
+
+function SportsCar(make, model, topSpeed) {
+	Car.call(this,make,model);
+	this.topSpeed=topSpeed;
 }
 
-function SportsCar(make, model, topSpeed) extends Car {
-	SportsCar(make,model,topSpeed){
-		super(make,model);
-		this.make = make;
-		this.model = model;
-		this.topSpeed = topSpeed;
-	}
-	getTpSpeed(){
-		return topSpeed;
-	}
-}
-// const car = new SportsCar("Ferrari", "Testarossa", 200);
-// console.log(car.getMakeModel());
-// console.log(car.getTopSpeed());
+SportsCar.prototype=Object.create(Car.prototype);
+SportsCar.prototype.constructor=SportsCar;
 
+SportsCar.prototype.getTopSpeed=function(){
+	return this.topSpeed;
+}
 // Do not change the code below
 window.Car = Car;
 window.SportsCar = SportsCar;
